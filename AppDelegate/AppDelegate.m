@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MMBaseViewController.h"
 #import "MMMainViewController.h"
+#import "SDImageWebPCoder.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // WebP image loading
+    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
+    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
+    
     if (@available(iOS 13.0, *)) {
 
     } else {

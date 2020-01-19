@@ -8,19 +8,25 @@
 
 #import "MMDoubanHomeViewController.h"
 
-#import "MMDoubanModel.h"
 #import "MMDoubanMulitiCell.h"
+#import "MMDoubanSingleCell.h"
 
 
 @interface MMDoubanHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 /// table
 @property (nonatomic, strong) UITableView *table;
+/// array
+@property (nonatomic, strong) NSArray *subjects;
 @end
 
 @implementation MMDoubanHomeViewController
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
+    
+    self.needExpo = YES;
+    
     // Do any additional setup after loading the view.
     [self.view addSubview:self.table];
     // subjects
@@ -28,6 +34,7 @@
     NSData *topData = [[NSData alloc] initWithContentsOfFile:filePath];
     NSDictionary *topDict = [NSJSONSerialization JSONObjectWithData:topData options:0 error:nil];
     NSArray *subjects = [MMDoubanModel mj_objectArrayWithKeyValuesArray:topDict[@"subjects"]];
+    self.subjects = subjects;
     
     [self.table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.mas_equalTo(0);
@@ -35,16 +42,23 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return self.subjects.count - 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView mm_dequeueReusableCell:[UITableViewCell class] forIndexPath:indexPath];
+    
+    UITableViewCell *cell = nil;
     if (indexPath.row == 0) {
-        cell = [tableView mm_dequeueReusableCell:[MMDoubanMulitiCell class] forIndexPath:indexPath];
+        MMDoubanMulitiCell *doubanCell = (MMDoubanMulitiCell *)[tableView mm_dequeueReusableCell:[MMDoubanMulitiCell class] forIndexPath:indexPath];
+        doubanCell.subjects = self.subjects;
+        cell = doubanCell;
+    } else {
+        MMDoubanModel *model = self.subjects[indexPath.row + 8];
+        MMDoubanSingleCell *singleCell = (MMDoubanSingleCell *)[tableView mm_dequeueReusableCell:[MMDoubanSingleCell class] forIndexPath:indexPath];
+        singleCell.model = model;
+        cell = singleCell;
     }
-    cell.backgroundColor = MMRandomColor;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Demo---%zd",indexPath.row];
+    
     return cell;
 }
 
@@ -76,6 +90,7 @@
         _table.sectionFooterHeight = UITableViewAutomaticDimension;
         [_table mm_registerClassForCell:[UITableViewCell class]];
         [_table mm_registerClassForCell:[MMDoubanMulitiCell class]];
+        [_table mm_registerClassForCell:[MMDoubanSingleCell class]];
     }
     return _table;
 }

@@ -28,10 +28,28 @@
 //    self.collectionView
 }
 
+- (void)setSubjects:(NSArray *)subjects {
+    _subjects = subjects;
+    [self.collectionView reloadData];
+}
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    MMDoubanModel *model = self.subjects[indexPath.row];
+    MMDoubanItemViewCell *cell = (MMDoubanItemViewCell *)[collectionView mm_dequeueReusableCell:[MMDoubanItemViewCell class] forIndexPath:indexPath];
+    cell.model = model;
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return MIN(self.subjects.count, 8);
+}
+
 - (UICollectionView *)collectionView {
     
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(MH_SCREEN_WIDTH - 20, 100);
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
@@ -48,11 +66,13 @@
     }
     if (!_collectionView.superview) {
         [self.contentView addSubview:_collectionView];
-        [_collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.mas_equalTo(0);
+            make.height.mas_equalTo(100);
         }];
     }
     return _collectionView;
 }
+
 
 @end

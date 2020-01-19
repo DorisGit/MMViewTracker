@@ -93,7 +93,8 @@
     if (recursive) {
         for (UIView *subview in view.subviews) {
             if (!subview.pageCtrl) {
-                subview.pageCtrl = view.pageCtrl;
+                subview.pageCtrl = [view currentPageCtrl];
+                NSLog(@"%@---所在的页面：%@",subview,subview.pageCtrl);
             }
             [MMExposureManager fetchViewForVisibleState:subview recursive:recursive];
         }

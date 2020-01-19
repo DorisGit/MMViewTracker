@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMDoubanModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MMDoubanMulitiCell : UITableViewCell
+@property (nonatomic, strong) NSArray *subjects;
 
 @end
 
