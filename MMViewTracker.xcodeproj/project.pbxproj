@@ -3,19 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0421704F23D1C54D00A69C73 /* MMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421704E23D1C54D00A69C73 /* MMMainViewController.m */; };
+		0421705323D1C5C700A69C73 /* UITableView+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421705223D1C5C700A69C73 /* UITableView+MM.m */; };
+		0421705923D1C80D00A69C73 /* UICollectionView+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421705823D1C80D00A69C73 /* UICollectionView+MM.m */; };
 		0429FBDD23CF313C004F12F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FBDC23CF313C004F12F4 /* AppDelegate.m */; };
 		0429FBE023CF313C004F12F4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FBDF23CF313C004F12F4 /* SceneDelegate.m */; };
-		0429FBE323CF313C004F12F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FBE223CF313C004F12F4 /* ViewController.m */; };
-		0429FBE623CF313C004F12F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0429FBE423CF313C004F12F4 /* Main.storyboard */; };
 		0429FBE823CF313E004F12F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0429FBE723CF313E004F12F4 /* Assets.xcassets */; };
-		0429FBEB23CF313E004F12F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0429FBE923CF313E004F12F4 /* LaunchScreen.storyboard */; };
 		0429FBEE23CF313E004F12F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FBED23CF313E004F12F4 /* main.m */; };
 		0429FBF823CF313E004F12F4 /* MMViewTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FBF723CF313E004F12F4 /* MMViewTrackerTests.m */; };
 		0429FC0323CF313E004F12F4 /* MMViewTrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC0223CF313E004F12F4 /* MMViewTrackerUITests.m */; };
+		0429FC1523CF3270004F12F4 /* MMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC1423CF3270004F12F4 /* MMBaseViewController.m */; };
+		0429FC3523D040E5004F12F4 /* NSString+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC3423D040E5004F12F4 /* NSString+MM.m */; };
+		0429FC3923D16066004F12F4 /* NSObject+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC3823D16066004F12F4 /* NSObject+MM.m */; };
+		0429FC3E23D16857004F12F4 /* MMExposureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC3D23D16857004F12F4 /* MMExposureManager.m */; };
+		0429FC4123D16A13004F12F4 /* UIView+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC4023D16A13004F12F4 /* UIView+MM.m */; };
+		0429FC4523D18C19004F12F4 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC4323D18C19004F12F4 /* NSObject+Swizzle.m */; };
+		0429FC4823D18E0C004F12F4 /* UIViewController+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC4723D18E0C004F12F4 /* UIViewController+MM.m */; };
+		0429FC4A23D1BEB7004F12F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429FC4923D1BEB7004F12F4 /* QuartzCore.framework */; };
+		04DA2B6A23D42C1900D340C5 /* reviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6023D42C1900D340C5 /* reviews.json */; };
+		04DA2B6B23D42C1900D340C5 /* subject_26266893.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6123D42C1900D340C5 /* subject_26266893.json */; };
+		04DA2B6C23D42C1900D340C5 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6223D42C1900D340C5 /* comments.json */; };
+		04DA2B6D23D42C1900D340C5 /* celebrity.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6323D42C1900D340C5 /* celebrity.json */; };
+		04DA2B6E23D42C1900D340C5 /* coming_soon.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6423D42C1900D340C5 /* coming_soon.json */; };
+		04DA2B6F23D42C1900D340C5 /* works.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6523D42C1900D340C5 /* works.json */; };
+		04DA2B7023D42C1900D340C5 /* top250.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6623D42C1900D340C5 /* top250.json */; };
+		04DA2B7123D42C1900D340C5 /* in_theaters.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6723D42C1900D340C5 /* in_theaters.json */; };
+		04DA2B7223D42C1900D340C5 /* group.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6823D42C1900D340C5 /* group.json */; };
+		04DA2B7323D42C1900D340C5 /* weekly.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B6923D42C1900D340C5 /* weekly.json */; };
+		04DA2B7723D42CA500D340C5 /* MMInterfaceNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2B7623D42CA500D340C5 /* MMInterfaceNetwork.m */; };
+		04DA2B7B23D444BA00D340C5 /* MMDoubanHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2B7A23D444BA00D340C5 /* MMDoubanHomeViewController.m */; };
+		04DA2B7D23D444F100D340C5 /* DoubanAPI.md in Resources */ = {isa = PBXBuildFile; fileRef = 04DA2B7C23D444F100D340C5 /* DoubanAPI.md */; };
+		04DA2B8123D449E100D340C5 /* MMDoubanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2B8023D449E100D340C5 /* MMDoubanModel.m */; };
+		04DA2B8423D4602B00D340C5 /* MMDoubanMulitiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2B8323D4602B00D340C5 /* MMDoubanMulitiCell.m */; };
+		04DA2B8723D466B300D340C5 /* MMDoubanItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DA2B8623D466B300D340C5 /* MMDoubanItemViewCell.m */; };
+		8C078CBC79E9EE0153CF6934 /* Pods_MMViewTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA1C184367F7C3D23AD804E /* Pods_MMViewTrackerTests.framework */; };
+		ACFF35A1DC579CC7B24494E2 /* Pods_MMViewTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A790F28ED18A5B4E56B0BB /* Pods_MMViewTracker.framework */; };
+		B05AA0CB9F6FD208C552B3B9 /* Pods_MMViewTracker_MMViewTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C56FC5C91E08CE561572E8F /* Pods_MMViewTracker_MMViewTrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,16 +63,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0421704D23D1C54D00A69C73 /* MMMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMMainViewController.h; sourceTree = "<group>"; };
+		0421704E23D1C54D00A69C73 /* MMMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMMainViewController.m; sourceTree = "<group>"; };
+		0421705123D1C5C700A69C73 /* UITableView+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+MM.h"; sourceTree = "<group>"; };
+		0421705223D1C5C700A69C73 /* UITableView+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MM.m"; sourceTree = "<group>"; };
+		0421705723D1C80D00A69C73 /* UICollectionView+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+MM.h"; sourceTree = "<group>"; };
+		0421705823D1C80D00A69C73 /* UICollectionView+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+MM.m"; sourceTree = "<group>"; };
 		0429FBD823CF313C004F12F4 /* MMViewTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMViewTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0429FBDB23CF313C004F12F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0429FBDC23CF313C004F12F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0429FBDE23CF313C004F12F4 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		0429FBDF23CF313C004F12F4 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		0429FBE123CF313C004F12F4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0429FBE223CF313C004F12F4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0429FBE523CF313C004F12F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0429FBE723CF313E004F12F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0429FBEA23CF313E004F12F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0429FBEC23CF313E004F12F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0429FBED23CF313E004F12F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0429FBF323CF313E004F12F4 /* MMViewTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMViewTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +83,56 @@
 		0429FBFE23CF313E004F12F4 /* MMViewTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMViewTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0429FC0223CF313E004F12F4 /* MMViewTrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMViewTrackerUITests.m; sourceTree = "<group>"; };
 		0429FC0423CF313E004F12F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0429FC1323CF3270004F12F4 /* MMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMBaseViewController.h; sourceTree = "<group>"; };
+		0429FC1423CF3270004F12F4 /* MMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMBaseViewController.m; sourceTree = "<group>"; };
+		0429FC2F23CF41BC004F12F4 /* MMTrackerMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTrackerMacro.h; sourceTree = "<group>"; };
+		0429FC3023D0394F004F12F4 /* MMTracker.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTracker.pch; sourceTree = "<group>"; };
+		0429FC3323D040E5004F12F4 /* NSString+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MM.h"; sourceTree = "<group>"; };
+		0429FC3423D040E5004F12F4 /* NSString+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MM.m"; sourceTree = "<group>"; };
+		0429FC3723D16066004F12F4 /* NSObject+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MM.h"; sourceTree = "<group>"; };
+		0429FC3823D16066004F12F4 /* NSObject+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MM.m"; sourceTree = "<group>"; };
+		0429FC3A23D164F9004F12F4 /* MHSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHSingleton.h; sourceTree = "<group>"; };
+		0429FC3C23D16857004F12F4 /* MMExposureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMExposureManager.h; sourceTree = "<group>"; };
+		0429FC3D23D16857004F12F4 /* MMExposureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMExposureManager.m; sourceTree = "<group>"; };
+		0429FC3F23D16A13004F12F4 /* UIView+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MM.h"; sourceTree = "<group>"; };
+		0429FC4023D16A13004F12F4 /* UIView+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MM.m"; sourceTree = "<group>"; };
+		0429FC4223D16B32004F12F4 /* MMExposureProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMExposureProtocol.h; sourceTree = "<group>"; };
+		0429FC4323D18C19004F12F4 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
+		0429FC4423D18C19004F12F4 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		0429FC4623D18E0C004F12F4 /* UIViewController+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MM.h"; sourceTree = "<group>"; };
+		0429FC4723D18E0C004F12F4 /* UIViewController+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MM.m"; sourceTree = "<group>"; };
+		0429FC4923D1BEB7004F12F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		04DA2B6023D42C1900D340C5 /* reviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reviews.json; sourceTree = "<group>"; };
+		04DA2B6123D42C1900D340C5 /* subject_26266893.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subject_26266893.json; sourceTree = "<group>"; };
+		04DA2B6223D42C1900D340C5 /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
+		04DA2B6323D42C1900D340C5 /* celebrity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = celebrity.json; sourceTree = "<group>"; };
+		04DA2B6423D42C1900D340C5 /* coming_soon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coming_soon.json; sourceTree = "<group>"; };
+		04DA2B6523D42C1900D340C5 /* works.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = works.json; sourceTree = "<group>"; };
+		04DA2B6623D42C1900D340C5 /* top250.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = top250.json; sourceTree = "<group>"; };
+		04DA2B6723D42C1900D340C5 /* in_theaters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = in_theaters.json; sourceTree = "<group>"; };
+		04DA2B6823D42C1900D340C5 /* group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = group.json; sourceTree = "<group>"; };
+		04DA2B6923D42C1900D340C5 /* weekly.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weekly.json; sourceTree = "<group>"; };
+		04DA2B7523D42CA500D340C5 /* MMInterfaceNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMInterfaceNetwork.h; sourceTree = "<group>"; };
+		04DA2B7623D42CA500D340C5 /* MMInterfaceNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMInterfaceNetwork.m; sourceTree = "<group>"; };
+		04DA2B7823D42D8600D340C5 /* MMInterfaceMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMInterfaceMacro.h; sourceTree = "<group>"; };
+		04DA2B7923D444BA00D340C5 /* MMDoubanHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDoubanHomeViewController.h; sourceTree = "<group>"; };
+		04DA2B7A23D444BA00D340C5 /* MMDoubanHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDoubanHomeViewController.m; sourceTree = "<group>"; };
+		04DA2B7C23D444F100D340C5 /* DoubanAPI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DoubanAPI.md; sourceTree = "<group>"; };
+		04DA2B7F23D449E100D340C5 /* MMDoubanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDoubanModel.h; sourceTree = "<group>"; };
+		04DA2B8023D449E100D340C5 /* MMDoubanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDoubanModel.m; sourceTree = "<group>"; };
+		04DA2B8223D4602B00D340C5 /* MMDoubanMulitiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDoubanMulitiCell.h; sourceTree = "<group>"; };
+		04DA2B8323D4602B00D340C5 /* MMDoubanMulitiCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDoubanMulitiCell.m; sourceTree = "<group>"; };
+		04DA2B8523D466B300D340C5 /* MMDoubanItemViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDoubanItemViewCell.h; sourceTree = "<group>"; };
+		04DA2B8623D466B300D340C5 /* MMDoubanItemViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDoubanItemViewCell.m; sourceTree = "<group>"; };
+		1EA1C184367F7C3D23AD804E /* Pods_MMViewTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMViewTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3082E79D94E8D9794CE53E7B /* Pods-MMViewTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMViewTracker.release.xcconfig"; path = "Target Support Files/Pods-MMViewTracker/Pods-MMViewTracker.release.xcconfig"; sourceTree = "<group>"; };
+		3C56FC5C91E08CE561572E8F /* Pods_MMViewTracker_MMViewTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMViewTracker_MMViewTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0FA075D2C32D6390BBDDD6 /* Pods-MMViewTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMViewTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-MMViewTrackerTests/Pods-MMViewTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		50D54120576C51CA7544F7F6 /* Pods-MMViewTracker-MMViewTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMViewTracker-MMViewTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-MMViewTracker-MMViewTrackerUITests/Pods-MMViewTracker-MMViewTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		658CD86B8D6B80A8D1ACED8B /* Pods-MMViewTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMViewTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-MMViewTrackerTests/Pods-MMViewTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		70A790F28ED18A5B4E56B0BB /* Pods_MMViewTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMViewTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA24C6C39CA68171A71EED8 /* Pods-MMViewTracker-MMViewTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMViewTracker-MMViewTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MMViewTracker-MMViewTrackerUITests/Pods-MMViewTracker-MMViewTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFC1DBE3598A4C2ACE7F247D /* Pods-MMViewTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMViewTracker.debug.xcconfig"; path = "Target Support Files/Pods-MMViewTracker/Pods-MMViewTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0429FC4A23D1BEB7004F12F4 /* QuartzCore.framework in Frameworks */,
+				ACFF35A1DC579CC7B24494E2 /* Pods_MMViewTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C078CBC79E9EE0153CF6934 /* Pods_MMViewTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,19 +157,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05AA0CB9F6FD208C552B3B9 /* Pods_MMViewTracker_MMViewTrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0421704C23D1C53A00A69C73 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B7E23D449B100D340C5 /* Model */,
+				04DA2B5E23D42BDC00D340C5 /* View */,
+				04DA2B5D23D42BCE00D340C5 /* ViewCtroller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0421705023D1C5A700A69C73 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				0421705123D1C5C700A69C73 /* UITableView+MM.h */,
+				0421705223D1C5C700A69C73 /* UITableView+MM.m */,
+				0421705723D1C80D00A69C73 /* UICollectionView+MM.h */,
+				0421705823D1C80D00A69C73 /* UICollectionView+MM.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		0429FBCF23CF313C004F12F4 = {
 			isa = PBXGroup;
 			children = (
-				0429FBDA23CF313C004F12F4 /* MMViewTracker */,
+				0429FC1023CF316C004F12F4 /* AppDelegate */,
+				0429FC1223CF3244004F12F4 /* PageView */,
+				0429FC1623CF32A2004F12F4 /* Utils */,
+				0429FC1123CF3222004F12F4 /* Resource */,
 				0429FBF623CF313E004F12F4 /* MMViewTrackerTests */,
 				0429FC0123CF313E004F12F4 /* MMViewTrackerUITests */,
 				0429FBD923CF313C004F12F4 /* Products */,
+				5D2FC261F6566CFCDA9C75C7 /* Pods */,
+				1B92BE87CA220C6B12B2B898 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,17 +213,7 @@
 		0429FBDA23CF313C004F12F4 /* MMViewTracker */ = {
 			isa = PBXGroup;
 			children = (
-				0429FBDB23CF313C004F12F4 /* AppDelegate.h */,
-				0429FBDC23CF313C004F12F4 /* AppDelegate.m */,
-				0429FBDE23CF313C004F12F4 /* SceneDelegate.h */,
-				0429FBDF23CF313C004F12F4 /* SceneDelegate.m */,
-				0429FBE123CF313C004F12F4 /* ViewController.h */,
-				0429FBE223CF313C004F12F4 /* ViewController.m */,
-				0429FBE423CF313C004F12F4 /* Main.storyboard */,
-				0429FBE723CF313E004F12F4 /* Assets.xcassets */,
-				0429FBE923CF313E004F12F4 /* LaunchScreen.storyboard */,
-				0429FBEC23CF313E004F12F4 /* Info.plist */,
-				0429FBED23CF313E004F12F4 /* main.m */,
+				0429FC1723CF32C0004F12F4 /* MMExposure */,
 			);
 			path = MMViewTracker;
 			sourceTree = "<group>";
@@ -137,6 +236,194 @@
 			path = MMViewTrackerUITests;
 			sourceTree = "<group>";
 		};
+		0429FC1023CF316C004F12F4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0429FBDB23CF313C004F12F4 /* AppDelegate.h */,
+				0429FBDC23CF313C004F12F4 /* AppDelegate.m */,
+				0429FBDE23CF313C004F12F4 /* SceneDelegate.h */,
+				0429FBDF23CF313C004F12F4 /* SceneDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0429FC1123CF3222004F12F4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B5F23D42C1900D340C5 /* mock */,
+				0429FBE723CF313E004F12F4 /* Assets.xcassets */,
+				0429FBEC23CF313E004F12F4 /* Info.plist */,
+				0429FBED23CF313E004F12F4 /* main.m */,
+				0429FC3023D0394F004F12F4 /* MMTracker.pch */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0429FC1223CF3244004F12F4 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				0421704C23D1C53A00A69C73 /* Main */,
+				0429FC3B23D167EB004F12F4 /* BaseComon */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
+		0429FC1623CF32A2004F12F4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B7423D42C7700D340C5 /* MMNetwork */,
+				0429FC3123D040AB004F12F4 /* Catogary */,
+				0429FC2E23CF4198004F12F4 /* Macro */,
+				0429FBDA23CF313C004F12F4 /* MMViewTracker */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0429FC1723CF32C0004F12F4 /* MMExposure */ = {
+			isa = PBXGroup;
+			children = (
+				0429FC3C23D16857004F12F4 /* MMExposureManager.h */,
+				0429FC3D23D16857004F12F4 /* MMExposureManager.m */,
+				0429FC3F23D16A13004F12F4 /* UIView+MM.h */,
+				0429FC4023D16A13004F12F4 /* UIView+MM.m */,
+				0429FC4223D16B32004F12F4 /* MMExposureProtocol.h */,
+				0429FC4423D18C19004F12F4 /* NSObject+Swizzle.h */,
+				0429FC4323D18C19004F12F4 /* NSObject+Swizzle.m */,
+				0429FC4623D18E0C004F12F4 /* UIViewController+MM.h */,
+				0429FC4723D18E0C004F12F4 /* UIViewController+MM.m */,
+			);
+			path = MMExposure;
+			sourceTree = "<group>";
+		};
+		0429FC2E23CF4198004F12F4 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				0429FC2F23CF41BC004F12F4 /* MMTrackerMacro.h */,
+				0429FC3A23D164F9004F12F4 /* MHSingleton.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		0429FC3123D040AB004F12F4 /* Catogary */ = {
+			isa = PBXGroup;
+			children = (
+				0421705023D1C5A700A69C73 /* UITableView */,
+				0429FC3623D16057004F12F4 /* NSObject */,
+				0429FC3223D040BF004F12F4 /* NSString */,
+			);
+			path = Catogary;
+			sourceTree = "<group>";
+		};
+		0429FC3223D040BF004F12F4 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				0429FC3323D040E5004F12F4 /* NSString+MM.h */,
+				0429FC3423D040E5004F12F4 /* NSString+MM.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		0429FC3623D16057004F12F4 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				0429FC3723D16066004F12F4 /* NSObject+MM.h */,
+				0429FC3823D16066004F12F4 /* NSObject+MM.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		0429FC3B23D167EB004F12F4 /* BaseComon */ = {
+			isa = PBXGroup;
+			children = (
+				0429FC1323CF3270004F12F4 /* MMBaseViewController.h */,
+				0429FC1423CF3270004F12F4 /* MMBaseViewController.m */,
+			);
+			path = BaseComon;
+			sourceTree = "<group>";
+		};
+		04DA2B5D23D42BCE00D340C5 /* ViewCtroller */ = {
+			isa = PBXGroup;
+			children = (
+				0421704D23D1C54D00A69C73 /* MMMainViewController.h */,
+				0421704E23D1C54D00A69C73 /* MMMainViewController.m */,
+				04DA2B7923D444BA00D340C5 /* MMDoubanHomeViewController.h */,
+				04DA2B7A23D444BA00D340C5 /* MMDoubanHomeViewController.m */,
+			);
+			path = ViewCtroller;
+			sourceTree = "<group>";
+		};
+		04DA2B5E23D42BDC00D340C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B8223D4602B00D340C5 /* MMDoubanMulitiCell.h */,
+				04DA2B8323D4602B00D340C5 /* MMDoubanMulitiCell.m */,
+				04DA2B8523D466B300D340C5 /* MMDoubanItemViewCell.h */,
+				04DA2B8623D466B300D340C5 /* MMDoubanItemViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DA2B5F23D42C1900D340C5 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B7C23D444F100D340C5 /* DoubanAPI.md */,
+				04DA2B6023D42C1900D340C5 /* reviews.json */,
+				04DA2B6123D42C1900D340C5 /* subject_26266893.json */,
+				04DA2B6223D42C1900D340C5 /* comments.json */,
+				04DA2B6323D42C1900D340C5 /* celebrity.json */,
+				04DA2B6423D42C1900D340C5 /* coming_soon.json */,
+				04DA2B6523D42C1900D340C5 /* works.json */,
+				04DA2B6623D42C1900D340C5 /* top250.json */,
+				04DA2B6723D42C1900D340C5 /* in_theaters.json */,
+				04DA2B6823D42C1900D340C5 /* group.json */,
+				04DA2B6923D42C1900D340C5 /* weekly.json */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
+		04DA2B7423D42C7700D340C5 /* MMNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B7523D42CA500D340C5 /* MMInterfaceNetwork.h */,
+				04DA2B7623D42CA500D340C5 /* MMInterfaceNetwork.m */,
+				04DA2B7823D42D8600D340C5 /* MMInterfaceMacro.h */,
+			);
+			path = MMNetwork;
+			sourceTree = "<group>";
+		};
+		04DA2B7E23D449B100D340C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04DA2B7F23D449E100D340C5 /* MMDoubanModel.h */,
+				04DA2B8023D449E100D340C5 /* MMDoubanModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B92BE87CA220C6B12B2B898 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0429FC4923D1BEB7004F12F4 /* QuartzCore.framework */,
+				70A790F28ED18A5B4E56B0BB /* Pods_MMViewTracker.framework */,
+				3C56FC5C91E08CE561572E8F /* Pods_MMViewTracker_MMViewTrackerUITests.framework */,
+				1EA1C184367F7C3D23AD804E /* Pods_MMViewTrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D2FC261F6566CFCDA9C75C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFC1DBE3598A4C2ACE7F247D /* Pods-MMViewTracker.debug.xcconfig */,
+				3082E79D94E8D9794CE53E7B /* Pods-MMViewTracker.release.xcconfig */,
+				CEA24C6C39CA68171A71EED8 /* Pods-MMViewTracker-MMViewTrackerUITests.debug.xcconfig */,
+				50D54120576C51CA7544F7F6 /* Pods-MMViewTracker-MMViewTrackerUITests.release.xcconfig */,
+				658CD86B8D6B80A8D1ACED8B /* Pods-MMViewTrackerTests.debug.xcconfig */,
+				4C0FA075D2C32D6390BBDDD6 /* Pods-MMViewTrackerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0429FC0723CF313E004F12F4 /* Build configuration list for PBXNativeTarget "MMViewTracker" */;
 			buildPhases = (
+				F21FC0F31567342B2FB2819E /* [CP] Check Pods Manifest.lock */,
 				0429FBD423CF313C004F12F4 /* Sources */,
 				0429FBD523CF313C004F12F4 /* Frameworks */,
 				0429FBD623CF313C004F12F4 /* Resources */,
+				22F94A70D6CB9BE951A805A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +450,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0429FC0A23CF313E004F12F4 /* Build configuration list for PBXNativeTarget "MMViewTrackerTests" */;
 			buildPhases = (
+				C3B7E4940DF17C9CB4471C35 /* [CP] Check Pods Manifest.lock */,
 				0429FBEF23CF313E004F12F4 /* Sources */,
 				0429FBF023CF313E004F12F4 /* Frameworks */,
 				0429FBF123CF313E004F12F4 /* Resources */,
@@ -179,9 +469,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0429FC0D23CF313E004F12F4 /* Build configuration list for PBXNativeTarget "MMViewTrackerUITests" */;
 			buildPhases = (
+				48C6CFE4284CDE9DF2C5A371 /* [CP] Check Pods Manifest.lock */,
 				0429FBFA23CF313E004F12F4 /* Sources */,
 				0429FBFB23CF313E004F12F4 /* Frameworks */,
 				0429FBFC23CF313E004F12F4 /* Resources */,
+				051B976EACC9F0CC3443B053 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,8 +491,9 @@
 		0429FBD023CF313C004F12F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MM;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "艾娇平";
+				ORGANIZATIONNAME = Mikasa;
 				TargetAttributes = {
 					0429FBD723CF313C004F12F4 = {
 						CreatedOnToolsVersion = 11.3;
@@ -240,9 +533,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0429FBEB23CF313E004F12F4 /* LaunchScreen.storyboard in Resources */,
 				0429FBE823CF313E004F12F4 /* Assets.xcassets in Resources */,
-				0429FBE623CF313C004F12F4 /* Main.storyboard in Resources */,
+				04DA2B6A23D42C1900D340C5 /* reviews.json in Resources */,
+				04DA2B7323D42C1900D340C5 /* weekly.json in Resources */,
+				04DA2B6B23D42C1900D340C5 /* subject_26266893.json in Resources */,
+				04DA2B6C23D42C1900D340C5 /* comments.json in Resources */,
+				04DA2B6D23D42C1900D340C5 /* celebrity.json in Resources */,
+				04DA2B7023D42C1900D340C5 /* top250.json in Resources */,
+				04DA2B7123D42C1900D340C5 /* in_theaters.json in Resources */,
+				04DA2B6E23D42C1900D340C5 /* coming_soon.json in Resources */,
+				04DA2B6F23D42C1900D340C5 /* works.json in Resources */,
+				04DA2B7D23D444F100D340C5 /* DoubanAPI.md in Resources */,
+				04DA2B7223D42C1900D340C5 /* group.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,15 +564,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		051B976EACC9F0CC3443B053 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MMViewTracker-MMViewTrackerUITests/Pods-MMViewTracker-MMViewTrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MMViewTracker-MMViewTrackerUITests/Pods-MMViewTracker-MMViewTrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MMViewTracker-MMViewTrackerUITests/Pods-MMViewTracker-MMViewTrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22F94A70D6CB9BE951A805A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MMViewTracker/Pods-MMViewTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MMViewTracker/Pods-MMViewTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MMViewTracker/Pods-MMViewTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48C6CFE4284CDE9DF2C5A371 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MMViewTracker-MMViewTrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3B7E4940DF17C9CB4471C35 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MMViewTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F21FC0F31567342B2FB2819E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MMViewTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0429FBD423CF313C004F12F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0429FBE323CF313C004F12F4 /* ViewController.m in Sources */,
+				04DA2B8423D4602B00D340C5 /* MMDoubanMulitiCell.m in Sources */,
+				04DA2B7723D42CA500D340C5 /* MMInterfaceNetwork.m in Sources */,
+				0429FC4823D18E0C004F12F4 /* UIViewController+MM.m in Sources */,
+				0421705323D1C5C700A69C73 /* UITableView+MM.m in Sources */,
+				0421704F23D1C54D00A69C73 /* MMMainViewController.m in Sources */,
 				0429FBDD23CF313C004F12F4 /* AppDelegate.m in Sources */,
+				0429FC3923D16066004F12F4 /* NSObject+MM.m in Sources */,
+				04DA2B7B23D444BA00D340C5 /* MMDoubanHomeViewController.m in Sources */,
+				0429FC1523CF3270004F12F4 /* MMBaseViewController.m in Sources */,
+				0421705923D1C80D00A69C73 /* UICollectionView+MM.m in Sources */,
+				0429FC4523D18C19004F12F4 /* NSObject+Swizzle.m in Sources */,
 				0429FBEE23CF313E004F12F4 /* main.m in Sources */,
+				04DA2B8723D466B300D340C5 /* MMDoubanItemViewCell.m in Sources */,
+				0429FC4123D16A13004F12F4 /* UIView+MM.m in Sources */,
+				0429FC3523D040E5004F12F4 /* NSString+MM.m in Sources */,
 				0429FBE023CF313C004F12F4 /* SceneDelegate.m in Sources */,
+				04DA2B8123D449E100D340C5 /* MMDoubanModel.m in Sources */,
+				0429FC3E23D16857004F12F4 /* MMExposureManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,25 +723,6 @@
 			targetProxy = 0429FBFF23CF313E004F12F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0429FBE423CF313C004F12F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0429FBE523CF313C004F12F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0429FBE923CF313E004F12F4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0429FBEA23CF313E004F12F4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0429FC0523CF313E004F12F4 /* Debug */ = {
@@ -375,7 +775,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +827,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,40 +837,49 @@
 		};
 		0429FC0823CF313E004F12F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFC1DBE3598A4C2ACE7F247D /* Pods-MMViewTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C4KDUT3X;
-				INFOPLIST_FILE = MMViewTracker/Info.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Resource/MMTracker.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikasa.MMViewTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0429FC0923CF313E004F12F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3082E79D94E8D9794CE53E7B /* Pods-MMViewTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C4KDUT3X;
-				INFOPLIST_FILE = MMViewTracker/Info.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Resource/MMTracker.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikasa.MMViewTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		0429FC0B23CF313E004F12F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 658CD86B8D6B80A8D1ACED8B /* Pods-MMViewTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +900,7 @@
 		};
 		0429FC0C23CF313E004F12F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C0FA075D2C32D6390BBDDD6 /* Pods-MMViewTrackerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +921,7 @@
 		};
 		0429FC0E23CF313E004F12F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA24C6C39CA68171A71EED8 /* Pods-MMViewTracker-MMViewTrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C4KDUT3X;
@@ -529,6 +940,7 @@
 		};
 		0429FC0F23CF313E004F12F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50D54120576C51CA7544F7F6 /* Pods-MMViewTracker-MMViewTrackerUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C4KDUT3X;

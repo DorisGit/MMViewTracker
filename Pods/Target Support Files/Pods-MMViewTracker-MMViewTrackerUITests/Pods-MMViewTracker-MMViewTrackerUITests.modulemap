@@ -1,0 +1,6 @@
+framework module Pods_MMViewTracker_MMViewTrackerUITests {
+  umbrella header "Pods-MMViewTracker-MMViewTrackerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

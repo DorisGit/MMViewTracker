@@ -3,7 +3,7 @@
 //  MMViewTrackerTests
 //
 //  Created by Mikasa on 2020/1/15.
-//  Copyright © 2020 艾娇平. All rights reserved.
+//  Copyright © 2020 Mikasa. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
