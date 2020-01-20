@@ -24,7 +24,8 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.table];
     [self.table mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.top.mas_equalTo(0);
+        make.left.right.bottom.mas_equalTo(0);
+        make.top.mas_equalTo(UINavigationBar.barHeight);
     }];
 }
 
@@ -57,7 +58,7 @@
 - (UITableView *)table {
     
     if (!_table) {
-        _table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0) style:UITableViewStyleGrouped];
+        _table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0) style:UITableViewStylePlain];
         _table.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _table.separatorStyle = UITableViewCellSeparatorStyleNone;
         _table.delegate = self;

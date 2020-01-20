@@ -29,6 +29,7 @@
 }
 
 - (void)setSubjects:(NSArray *)subjects {
+    
     _subjects = subjects;
     [self.collectionView reloadData];
 }
@@ -48,14 +49,19 @@
     
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.itemSize = CGSizeMake(MH_SCREEN_WIDTH - 20, 100);
+        layout.itemSize = CGSizeMake((MM_SCREEN_WIDTH - 20)/1.5, 100);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.minimumInteritemSpacing = 8;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.alwaysBounceVertical = YES;
-        _collectionView.alwaysBounceHorizontal = YES;
+        _collectionView.pagingEnabled = YES;
+        _collectionView.alwaysBounceVertical = NO;
+        _collectionView.showsHorizontalScrollIndicator = NO;
+        
+        MMAdjustsScrollViewInsets_Never(_collectionView);
+        
         if (@available(iOS 10.0, *)) {
             self.collectionView.prefetchingEnabled = NO;
         }
@@ -67,7 +73,7 @@
     if (!_collectionView.superview) {
         [self.contentView addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.top.bottom.mas_equalTo(0);
+            make.left.right.bottom.top.mas_equalTo(0);
             make.height.mas_equalTo(100);
         }];
     }

@@ -37,7 +37,8 @@
     self.subjects = subjects;
     
     [self.table mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.top.mas_equalTo(0);
+        make.left.right.bottom.mas_equalTo(0);
+        make.top.mas_equalTo(UINavigationBar.barHeight);
     }];
 }
 
@@ -79,7 +80,8 @@
 - (UITableView *)table {
     
     if (!_table) {
-        _table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0) style:UITableViewStyleGrouped];
+//        self.navigationController.navigationBar
+        _table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0) style:UITableViewStylePlain];
         _table.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _table.separatorStyle = UITableViewCellSeparatorStyleNone;
         _table.delegate = self;
@@ -88,6 +90,8 @@
         _table.estimatedRowHeight = 80;
         _table.sectionHeaderHeight = UITableViewAutomaticDimension;
         _table.sectionFooterHeight = UITableViewAutomaticDimension;
+        
+        MMAdjustsScrollViewInsets_Never(_table);
         [_table mm_registerClassForCell:[UITableViewCell class]];
         [_table mm_registerClassForCell:[MMDoubanMulitiCell class]];
         [_table mm_registerClassForCell:[MMDoubanSingleCell class]];
