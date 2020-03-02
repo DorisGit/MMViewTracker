@@ -164,7 +164,6 @@ NS_INLINE BOOL deswizzleAllClassMethods(__unsafe_unretained Class class) {
     return success;
 }
 
-
 NS_INLINE BOOL deswizzleAllInstanceMethods(__unsafe_unretained Class class) {
     OSSpinLockLock(&lock);
     BOOL success = NO;
@@ -179,6 +178,7 @@ NS_INLINE BOOL deswizzleAllInstanceMethods(__unsafe_unretained Class class) {
     OSSpinLockUnlock(&lock);
     return success;
 }
+
 BOOL deswizzleAll(void) {
     
     BOOL success = NO;
@@ -225,6 +225,7 @@ NS_INLINE void swizzleClassMethod(__unsafe_unretained Class class, SEL selector,
 }
 
 NS_INLINE void swizzleInstanceMethod(__unsafe_unretained Class class, SEL selector, MethodSwizzlerProvider replacement) {
+    
     OSSpinLockLock(&lock);
     Method originalMethod = class_getInstanceMethod(class, selector);
     

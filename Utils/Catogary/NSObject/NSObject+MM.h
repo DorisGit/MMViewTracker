@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define SafeValue(someValue) [GMSafeValue safeValue:someValue]
-#define SafeString(str) [GMSafeValue safeString:str]
-#define SafeNumber(num) [GMSafeValue safeNumber:num]
-#define NullableString(str) [GMSafeValue nullableString:str]
-#define NullableNumber(num) [GMSafeValue nullableNumber:num]
+#define SafeValue(someValue) [NSObject safeValue:someValue]
+#define SafeString(str) [NSObject safeString:str]
+#define SafeNumber(num) [NSObject safeNumber:num]
+#define NullableString(str) [NSObject nullableString:str]
+#define NullableNumber(num) [NSObject nullableNumber:num]
 
 
 NS_ASSUME_NONNULL_BEGIN

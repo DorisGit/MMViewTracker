@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mikasa. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MMBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

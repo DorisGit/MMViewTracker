@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MMPageItemCell : UITableViewCell
 
+/// 当前所持有页面
+@property (nonatomic, strong) UIViewController *containerController;
+
 @end
 
 NS_ASSUME_NONNULL_END

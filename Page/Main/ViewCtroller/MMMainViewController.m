@@ -8,6 +8,7 @@
 
 #import "MMMainViewController.h"
 #import "MMDoubanHomeViewController.h"
+#import "MMFlowViewController.h"
 
 
 @interface MMMainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -53,6 +54,15 @@
 - (void)clickCell_0 {
     MMDoubanHomeViewController *doubanCtrl = [MMDoubanHomeViewController new];
     [self.navigationController pushViewController:doubanCtrl animated:YES];
+}
+
+- (void)clickCell_1 {
+    MMFlowViewController *doubanCtrl = [MMFlowViewController new];
+    [self.navigationController pushViewController:doubanCtrl animated:YES];
+}
+
+- (void)clickCell_2 {
+
 }
 
 - (UITableView *)table {

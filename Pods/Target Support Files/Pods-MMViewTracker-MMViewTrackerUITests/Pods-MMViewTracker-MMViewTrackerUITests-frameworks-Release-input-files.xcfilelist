@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-MMViewTracker-MMViewTrackerUITests/Pods-MMViewTracker-MMViewTrackerUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/BeeHive/BeeHive.framework
 ${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework
 ${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework

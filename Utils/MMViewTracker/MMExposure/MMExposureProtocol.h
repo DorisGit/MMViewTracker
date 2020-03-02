@@ -5,6 +5,9 @@
 //  Created by Mikasa on 2020/1/17.
 //  Copyright © 2020 Mikasa. All rights reserved.
 //
+
+#define MMExposureDebugLog   0
+
 #import "NSObject+Swizzle.h"
 
 typedef NS_ENUM(NSInteger, GMViewExpoStatus) {

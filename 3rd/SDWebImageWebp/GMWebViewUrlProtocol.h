@@ -1,9 +1,9 @@
 //
 //  GMWebPUrlProtocol.h
-//  Gengmei
+//  Mikasa
 //
 //  Created by MoMo on 2019/9/17.
-//  Copyright © 2019 更美互动信息科技有限公司. All rights reserved.
+//  Copyright © 2019 Mikasa. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

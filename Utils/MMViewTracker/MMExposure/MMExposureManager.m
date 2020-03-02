@@ -7,8 +7,61 @@
 //
 
 #import "MMExposureManager.h"
+#import "NSDate+MM.h"
+#import "MMExposureItemModel.h"
+
+@interface MMExposureManager ()
+/// 正在处理曝光的view
+@property (nonatomic, strong) NSMutableDictionary *viewDictM;
+/// 正在处理曝光的数据集合
+@property (nonatomic, strong) NSMutableDictionary *dataDictM;
+/// 曝光完毕的数据存储集合
+@property (nonatomic, strong) NSMutableDictionary *pageItemDictM;
+@end
 
 @implementation MMExposureManager
+
+NS_INLINE NSString *MMExposureKeyForPage(UIViewController *page) {
+    return [NSString stringWithFormat:@"%p",page];
+}
+
+NS_INLINE NSString *MMExposureKeyForView(UIView *view) {
+    return [NSString stringWithFormat:@"%p%p",view,view.exposure];
+}
+
+NS_INLINE UIViewController *MMPageKeyForViewCtroller(NSString *pageAddress) {
+    uintptr_t hex = strtoull(pageAddress.UTF8String, NULL, 0);
+    id gotcha = (__bridge id)(void *)hex;
+    UIViewController *pageCtrl = (UIViewController *)gotcha;
+    return pageCtrl;
+}
+
+#pragma mark - Verify ViewExposure
+
+/// 当前View上是否有需要精准曝光的数据
+/// @param view view
+NS_INLINE BOOL MMHaveExposureForView(UIView *view) {
+    if (view.exposure && view.exposure.allKeys.count > 0) {
+        return YES;
+    }
+    return NO;
+}
+
+/// 是否是需要精准曝光的View
+/// @param view view
+NS_INLINE BOOL MMIsTargetViewForExposure(UIView *view) {
+    return view.pageCtrl.needExpo;
+}
+
+/// 是否需要忽略UITrackingRunLoopMode模式下的记录
+/// @param ignoreTracking ignoreTracking 是否需要忽略
+NS_INLINE BOOL MMIsNeedIgnoreTrackExposure(BOOL ignoreTracking) {
+    NSRunLoopMode mode = [NSRunLoop currentRunLoop].currentMode;
+    if (ignoreTracking && [mode isEqualToString:UITrackingRunLoopMode]) {
+        return YES;
+    }
+    return NO;
+}
 
 + (instancetype)sharedManager {
     static id _instance;
@@ -23,52 +76,14 @@
     
     if (self = [super init]) {
         _debugLog = YES;
+        _viewDictM = [NSMutableDictionary dictionary];
+        _dataDictM = [NSMutableDictionary dictionary];
+        _pageItemDictM = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
-#pragma mark - Verify ViewExposure
-
-/**
- 当前View上是否有需要精准曝光的数据
- 
- @param view View
- @return yes/no
- */
-+ (BOOL)haveExposureForView:(UIView *)view {
-    
-    if (view.exposure && view.exposure.allKeys.count > 0) {
-        return YES;
-    }
-    return NO;
-}
-
-/**
- 是否是需要精准曝光的View
- 
- @param view view
- @return yes/no
- */
-+ (BOOL)isTargetViewForExposure:(UIView *)view {
-    
-    return view.pageCtrl.needExpo;
-}
-
-/**
- 是否需要忽略UITrackingRunLoopMode模式下的记录
- 
- @param ignoreTracking 是否需要忽略
- @return 模式下的记录
- */
-+ (BOOL)isNeedIgnoreTrackExposure:(BOOL)ignoreTracking {
-    
-    NSRunLoopMode mode = [NSRunLoop currentRunLoop].currentMode;
-    if (ignoreTracking && [mode isEqualToString:UITrackingRunLoopMode]) {
-        return YES;
-    }
-    return NO;
-}
-
+#pragma mark - Visible
 /**
  设置当前view是否可见状态
  
@@ -77,34 +92,27 @@
  */
 + (void)fetchViewForVisibleState:(UIView *)view recursive:(BOOL)recursive {
     
-    BOOL ignoreTracking = YES;
-    if ([MMExposureManager haveExposureForView:view] && [MMExposureManager isTargetViewForExposure:view]) {
+    if (MMHaveExposureForView(view) && MMIsTargetViewForExposure(view)) {
         
         view.visible = [self isViewVisible:view];
-        if (![MMExposureManager isNeedIgnoreTrackExposure:NO]) {
-            
-            [[MMExposureManager sharedManager] exposureStatusForView:view inPageCtrl:view.pageCtrl];
-        } else {
-            
-            [[MMExposureManager sharedManager] synchronizeViewItemData:view];
-        }
+        [[MMExposureManager sharedManager] exposureStatusForView:view inPageCtrl:view.pageCtrl];
     }
     
     if (recursive) {
         for (UIView *subview in view.subviews) {
             if (!subview.pageCtrl) {
-                subview.pageCtrl = [view currentPageCtrl];
+                subview.pageCtrl = [view currentControllerForView];
+#ifdef MMExposureDebugLog
                 NSLog(@"%@---所在的页面：%@",subview,subview.pageCtrl);
+#endif
             }
             [MMExposureManager fetchViewForVisibleState:subview recursive:recursive];
         }
     }
     
-    if (![MMExposureManager isNeedIgnoreTrackExposure:ignoreTracking] && (!recursive || view.subviews.count == 0)) {
+    if ((!recursive || !view.subviews.count)) {
         [[MMExposureManager sharedManager] startStoreExposureData];
     }
-    
-    // NSLog(@"%@",view);
 }
 
 /**
@@ -115,7 +123,9 @@
  */
 + (BOOL)isViewVisible:(UIView *)view {
     
-    // NSLog(@"%@:%@:%d:%d:%f",view,view.window ,view.hidden,view.layer.hidden,view.alpha);
+    #ifdef MMExposureDebugLog
+        NSLog(@"%@:%@:%d:%d:%f",view,view.window ,view.hidden,view.layer.hidden,view.alpha);
+    #endif
     
     // 可见
     if (!view.window || view.hidden || view.layer.hidden || !view.alpha) {
@@ -159,30 +169,80 @@
 // 存储曝光数据
 - (void)startStoreExposureData {
     
-    /*
+    
     // 当前曝光View 上数据曝光情况
-    NSMutableDictionary *dictDataM = [NSMutableDictionary dictionaryWithDictionary:self.exposureDictM];
+    NSMutableDictionary *dictDataM = [NSMutableDictionary dictionaryWithDictionary:self.dataDictM];
     for (NSString *key in dictDataM.allKeys) {
         
-        UIView *exposureView = self.exposureViewDictM[key];
+        UIView *exposureView = self.viewDictM[key];
         // 当前view已经结束曝光 记录曝光数据---等待上传
         if (!exposureView) {
             NSString *page = [[key componentsSeparatedByString:@"/"] firstObject];
-            UIViewController *pageCtrl = [GMExposureManager expoPageCtrl:page];
-            [self storeExposureData:dictDataM[key] pageCtrl:pageCtrl];
-            [self.exposureDictM removeObjectForKey:key];
+            UIViewController *pageCtrl = MMPageKeyForViewCtroller(page);
+            [self storeEndExposureData:dictDataM[key] pageCtrl:pageCtrl];
+            [self.dataDictM removeObjectForKey:key];
         }
     }
     
     // 当前曝光数据是否仍在曝光-> 无存储曝光数据
-    NSMutableDictionary *dictViewM = [NSMutableDictionary dictionaryWithDictionary:self.exposureViewDictM];
+    NSMutableDictionary *dictViewM = [NSMutableDictionary dictionaryWithDictionary:self.viewDictM];
     for (NSString *key in dictViewM.allKeys) {
-        NSDictionary *dataDict = self.exposureDictM[key];
+        NSDictionary *dataDict = self.dataDictM[key];
         if (!dataDict) {
             UIView *view = dictViewM[key];
             [self storeStartExposureData:view pageCtrl:view.pageCtrl];
         }
+    }
+}
+
+// 存储开始曝光数据
+- (void)storeStartExposureData:(UIView *)startView pageCtrl:(UIViewController *)pageCtrl {
+    
+    NSMutableDictionary *exposureDictM = self.dataDictM;
+    startView.inTime = [NSDate currentMMTime];
+    startView.expoStatus = GMViewExpoStatusStart;
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:startView.exposure];
+    // 安卓没有这个功能 暂时屏蔽
+    [dict setObject:SafeString([NSDate currentMMTime]) forKey:@"inTime"];
+    
+    // 获取卡片位置
+    [dict setObject:SafeString(startView.relative_position) forKey:@"relative_position"];
+    [dict setObject:SafeString(startView.absolute_position) forKey:@"absolute_position"];
+    
+    if (startView.extra_param && startView.extra_param.allKeys.count > 0) {
+        [dict addEntriesFromDictionary:startView.extra_param];
+    }
+    [exposureDictM setObject:dict forKey:MMExposureKeyForView(startView)];
+}
+
+/// 按指定页面存储曝光数据
+/// @param expoDict 曝光数据
+/// @param pageCtrl 指定页面
+- (void)storeEndExposureData:(NSDictionary *)expoDict pageCtrl:(UIViewController *)pageCtrl{
+    
+    // 卡片曝光持续时间超出曝光最少时长才进行记录
+    /*
+    NSInteger inTime = [expoDict[@"inTime"] integerValue];
+    NSInteger duration = [view.outTime integerValue] - [view.inTime integerValue];
+    if (!duration) {
+        return;
     }*/
+    
+    // 将曝光数据所需要的某些参数从Page中取出
+    NSString *pageKey = MMExposureKeyForPage(pageCtrl);
+    MMExposureItemModel *itemModel = [self.pageItemDictM objectForKey:pageKey];
+    if (!itemModel) {
+        itemModel = [MMExposureItemModel new];
+    }
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:expoDict];
+    /* 安卓没有此功能 暂屏蔽
+    if (![dict[@"outTime"] isNonEmpty]) {
+        [dict setObject:SafeString([PhobosUtil currentTime]) forKey:@"outTime"];
+    }*/
+    [itemModel.exposure_cards addObject:dict];
+    [self.pageItemDictM setObject:itemModel forKey:pageKey];
 }
 
 // 同步Item数据
@@ -226,14 +286,14 @@
  */
 - (void)view:(UIView *)startView startVisibleInPageCtrl:(UIViewController *)inPageCtrl {
     
-    /*
+    
     // 无状态进入页面直接开启曝光
-    NSString *viewKey = [MMExposureManager exposureKeyForView:startView];
-    UIView *view = [self.exposureViewDictM objectForKey:viewKey];
+    NSString *viewKey = MMExposureKeyForView(startView);
+    UIView *view = [self.viewDictM objectForKey:viewKey];
     if (!view) {
         startView.expoStatus = GMViewExpoStatusStart;
-        [self.exposureViewDictM setObject:startView forKey:viewKey];
-    }*/
+        [self.viewDictM setObject:startView forKey:viewKey];
+    }
 }
 
 
@@ -245,13 +305,12 @@
  */
 - (void)view:(UIView *)endView endVisibleInPageCtrl:(UIViewController *)inPageCtrl {
     
-    /*
-    if ([self.exposureViewDictM.allValues containsObject:endView]) {
-        NSArray *keys = [self.exposureViewDictM allKeysForObject:endView];
+    if ([self.viewDictM.allValues containsObject:endView]) {
+        NSArray *keys = [self.viewDictM allKeysForObject:endView];
         for (NSString *key in keys) {
-            [self.exposureViewDictM removeObjectForKey:key];
+            [self.viewDictM removeObjectForKey:key];
         }
-    }*/
+    }
 }
 
 

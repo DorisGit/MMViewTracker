@@ -12,18 +12,20 @@
 @implementation UIView (MM)
 
 
-/// 获取当前View所在的控制器
-- (UIViewController *)currentPageCtrl {
-    UIView *currentView = self.superview;
-    UIResponder *response = [self.superview nextResponder];
+/**
+ 获取指定View所在的Controller
+ 
+ @return 当前所在Controller
+ */
+- (UIViewController *)currentControllerForView {
     
-    while (!currentView || [response isKindOfClass:[UIViewController class]]) {
-        
+    UIViewController *currentCtrl;
+    UIResponder *responder = [self.superview nextResponder];
+    while (responder && ![responder isKindOfClass:[UIViewController class]]) {
+        responder = [responder nextResponder];
     }
-    if ([response isKindOfClass:[UIViewController class]]) {
-        return (UIViewController *)response;
-    }
-    return nil;
+    currentCtrl = (UIViewController *)responder;
+    return currentCtrl;
 }
 
 #pragma mark - GMViewExposureProtocol
@@ -48,6 +50,7 @@
 - (BOOL)visible {
     return [objc_getAssociatedObject(self, @selector(visible)) boolValue];
 }
+
 /// 当前View所在的控制器
 /// @param pageCtrl pageCtrl
 - (void)setPageCtrl:(UIViewController *)pageCtrl {

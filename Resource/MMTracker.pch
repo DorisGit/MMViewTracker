@@ -17,6 +17,7 @@
 #import "UIFont+MM.h"
 #import "UITableView+MM.h"
 #import "UICollectionView+MM.h"
+#import "UINavigationBar+MM.h"
 
 #import "MMExposureManager.h"
 

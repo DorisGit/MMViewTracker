@@ -8,9 +8,16 @@
 
 #import "UINavigationBar+MM.h"
 
-#import <AppKit/AppKit.h>
-
-
 @implementation UINavigationBar (MM)
+
++ (CGFloat)barHeight {
+    return [self statusBarHeight] + 44;
+}
+
++ (CGFloat)statusBarHeight {
+    CGFloat height = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    return height;
+}
+
 
 @end

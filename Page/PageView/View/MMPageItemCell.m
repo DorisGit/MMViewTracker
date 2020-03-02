@@ -10,15 +10,17 @@
 
 @implementation MMPageItemCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setContainerController:(UIViewController *)containerController {
+    
+    if (_containerController != containerController) {
+        [_containerController.view removeFromSuperview];
+        [self.contentView addSubview:containerController.view];
+        [containerController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+            make.height.mas_equalTo(0);
+        }];
+    }
+    _containerController = containerController;
 }
 
 @end

@@ -17,6 +17,14 @@ target 'MMViewTracker' do
   pod 'MJExtension', '~> 3.2.1'
   # 图片获取
   pod 'SDWebImage', '~> 5.5.0'
+  # 组件化方案protocol-impClass
+#  pod 'BeeHive', '~> 1.6.0'
+  pod 'BeeHive', :path => '/Users/mikasa/Documents/GitHub_Mikasa/BeeHive'
+  
+  # 留着做示例使用
+  #   pod 'AXMagicIdentifiers',   :git => 'git@github.com:MMDori/AXMagicIdentifiers.git', :tag => '1.1.1', :configuration => ['UnitTest']
+  #   pod 'GMUtil',   :path => '../../GMPod/GMUtil'
+  #   pod 'Weibo_SDK', :podspec => './Weibo_SDK.podspec'
   
 
   # Pods for MMViewTracker

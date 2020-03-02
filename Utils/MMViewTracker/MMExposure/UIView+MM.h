@@ -15,7 +15,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (MM)<MMExposureProtocol,GMViewExposureProtocol>
-- (UIViewController *)currentPageCtrl;
+
+/**
+ 获取指定View所在的Controller
+ 
+ @return 当前所在Controller
+ */
+- (UIViewController *)currentControllerForView;
+
 @end
 
 NS_ASSUME_NONNULL_END
