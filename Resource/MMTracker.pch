@@ -18,6 +18,8 @@
 #import "UITableView+MM.h"
 #import "UICollectionView+MM.h"
 #import "UINavigationBar+MM.h"
+#import "UIView+MMFrame.h"
+#import "UIImage+MM.h"
 
 #import "MMExposureManager.h"
 

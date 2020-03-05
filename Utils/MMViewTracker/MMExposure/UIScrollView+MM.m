@@ -8,6 +8,7 @@
 
 #import "UIScrollView+MM.h"
 #import "NSObject+Swizzle.h"
+#import "MMExposureManager.h"
 
 @implementation UIScrollView (MM)
 + (void)load {
@@ -20,13 +21,35 @@
 - (void)swizzle_setDelegate:(id<UIScrollViewDelegate>)delegate {
     
     [self swizzle_setDelegate:delegate];
-    if (self.delegate != delegate) {
-        
-    }
+    
     SEL beginDragging = @selector(scrollViewWillBeginDragging:);
     
-    [UIScrollView swizzleInstanceMethod:beginDragging withReplacement:^id(IMP original, __unsafe_unretained Class swizzledClass, SEL selector) {
-        return ;
+    __weak typeof(self) weakSelf = self;
+    [delegate.class swizzleInstanceMethod:beginDragging
+                          withReplacement:^id(IMP original, __unsafe_unretained Class swizzledClass, SEL selector) {
+        return MethodSwizzlerReplacement(void, id, UIScrollView *scrollView) {
+            MethodSwizzlerOriginalImplementation(void(*)(id, SEL, id), scrollView);
+            
+            if (scrollView.pageCtrl.needExpo) {
+                NSLog(@"-----");
+                [MMExposureManager fetchViewForVisibleState:scrollView recursive:YES];
+            }
+        };
+    }];
+    
+    SEL endDragging = @selector(scrollViewDidEndDragging:willDecelerate:);
+    [delegate.class swizzleClassMethod:endDragging
+                       withReplacement:^id(IMP original, __unsafe_unretained Class swizzledClass, SEL selector) {
+        return MethodSwizzlerReplacement(void, id, UIScrollView *scrollView, BOOL decelerate) {
+            MethodSwizzlerOriginalImplementation(void(*)(id, SEL, id, BOOL), scrollView, decelerate);
+            
+            __strong UIView *strongSelf = weakSelf;
+            if (scrollView.pageCtrl.needExpo && !decelerate) {
+                NSLog(@"-----");
+                [MMExposureManager fetchViewForVisibleState:scrollView recursive:YES];
+            }
+        };
     }];
 }
+
 @end

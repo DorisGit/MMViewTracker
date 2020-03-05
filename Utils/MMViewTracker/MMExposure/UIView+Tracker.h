@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (MM)<MMExposureProtocol,GMViewExposureProtocol>
+@interface UIView (Tracker)<MMExposureProtocol,GMViewExposureProtocol>
 
 /**
  获取指定View所在的Controller

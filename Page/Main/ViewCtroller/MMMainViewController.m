@@ -9,6 +9,8 @@
 #import "MMMainViewController.h"
 #import "MMDoubanHomeViewController.h"
 #import "MMFlowViewController.h"
+#import "MMOffseScreenRenderViewController.h"
+
 
 
 @interface MMMainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -19,6 +21,13 @@
 @end
 
 @implementation MMMainViewController
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.needExpo = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,7 +71,9 @@
 }
 
 - (void)clickCell_2 {
-
+    
+    MMOffseScreenRenderViewController *doubanCtrl = [MMOffseScreenRenderViewController new];
+    [self.navigationController pushViewController:doubanCtrl animated:YES];
 }
 
 - (UITableView *)table {
@@ -82,6 +93,9 @@
     return _table;
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    NSLog(@"");
+}
 /*
 #pragma mark - Navigation
 

@@ -21,6 +21,8 @@ target 'MMViewTracker' do
 #  pod 'BeeHive', '~> 1.6.0'
   pod 'BeeHive', :path => '/Users/mikasa/Documents/GitHub_Mikasa/BeeHive'
   
+  # YYKit
+  pod 'YYKit'
   # 留着做示例使用
   #   pod 'AXMagicIdentifiers',   :git => 'git@github.com:MMDori/AXMagicIdentifiers.git', :tag => '1.1.1', :configuration => ['UnitTest']
   #   pod 'GMUtil',   :path => '../../GMPod/GMUtil'

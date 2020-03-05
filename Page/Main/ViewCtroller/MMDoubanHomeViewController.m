@@ -21,6 +21,13 @@
 
 @implementation MMDoubanHomeViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.needExpo = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
 
     [super viewDidLoad];
@@ -75,6 +82,10 @@
 
 - (void)clickCell_0 {
     
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"");
 }
 
 - (UITableView *)table {

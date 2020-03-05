@@ -50,16 +50,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "710E7962-10E5-423F-BA2A-E4AD29A3C0B3"
+            uuid = "BA5FB14A-F1F5-47C3-8FA4-65094A2E72D5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Page/Main/View/GMViewFlowLayout.m"
+            filePath = "Utils/MMViewTracker/MMExposure/UIScrollView+MM.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-layoutAttributesForElementsInRect:"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-swizzle_setDelegate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02A44986-A564-4EDE-89F9-BE0FDC4523D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Utils/MMViewTracker/MMExposure/UIScrollView+MM.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-swizzle_setDelegate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
