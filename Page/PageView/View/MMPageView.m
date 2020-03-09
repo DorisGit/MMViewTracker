@@ -13,15 +13,6 @@
 
 /// table
 @property (nonatomic, strong) UITableView *table;
-/// container
-@property (nonatomic, strong) UIViewController *container;
-/// controllers
-@property (nonatomic, strong) NSArray<UIViewController *> *controllers;
-/// titles
-@property (nonatomic, strong) NSArray *titles;
-
-
-
 
 @end
 
@@ -53,17 +44,33 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.delegate = self;
+        self.dataSource = self;
+        [self mm_registerClassForCell:[MMPageItemCell class]];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    if (self = [super initWithFrame:frame style:style]) {
+        self.delegate = self;
+        self.dataSource = self;
+        [self mm_registerClassForCell:[MMPageItemCell class]];
+    }
+    return self;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if ([self.delegate respondsToSelector:@selector(numberOfSectionsInPageView:)]) {
-        [self.delegate numberOfSectionsInPageView:self];
+    if ([self.pageDataSource respondsToSelector:@selector(numberOfSectionsInPageView:)]) {
+        return [self.pageDataSource numberOfSectionsInPageView:self];
     }
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(pageView:numberOfRowsInSection:)]) {
-        return [self.delegate pageView:self numberOfRowsInSection:section];
+    if ([self.pageDataSource respondsToSelector:@selector(pageView:numberOfRowsInSection:)]) {
+        return [self.pageDataSource pageView:self numberOfRowsInSection:section];
     }
     return 0;
 }
@@ -71,28 +78,50 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // 头部信息
-    if ([self.delegate respondsToSelector:@selector(pageView:cellForRowAtIndexPath:)]) {
-        return [self.delegate pageView:self cellForRowAtIndexPath:indexPath];
+    if ([self.pageDataSource respondsToSelector:@selector(pageView:cellForRowAtIndexPath:)] &&
+        [self.pageDataSource pageView:self cellForRowAtIndexPath:indexPath]) {
+        return [self.pageDataSource pageView:self cellForRowAtIndexPath:indexPath];
     } else {
         // 内容容器
         MMPageItemCell *itemCell = (MMPageItemCell *)[tableView mm_dequeueReusableCell:[MMPageItemCell class] forIndexPath:indexPath];
         // 内容容器页面
-        if ([self.delegate respondsToSelector:@selector(pageView:cellForContainerAtIndexPath:)]) {
-            itemCell.containerController = [self.delegate pageView:self cellForContainerAtIndexPath:indexPath];
+        if ([self.pageDataSource respondsToSelector:@selector(pageView:cellForContainerAtIndexPath:)]) {
+            itemCell.containerController = [self.pageDataSource pageView:self cellForContainerAtIndexPath:indexPath];
         }
         // 更新子容器的高度
         CGFloat containerHeight = 0;
-        if ([self.delegate respondsToSelector:@selector(pageView:heightForContainerAtIndexPath:)]) {
-            containerHeight = [self.delegate pageView:self heightForContainerAtIndexPath:indexPath];
+        if ([self.pageDelegate respondsToSelector:@selector(pageView:heightForContainerAtIndexPath:)]) {
+            containerHeight = [self.pageDelegate pageView:self heightForContainerAtIndexPath:indexPath];
+            [itemCell.containerController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(containerHeight);
+            }];
         }
-        [itemCell.pageCtrl.view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(containerHeight);
-        }];
         return itemCell;
     }
-//    return [tableView mm_dequeueReusableCell:[UITableViewCell class] forIndexPath:indexPath];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if ([self.pageDelegate respondsToSelector:@selector(pageView:viewForHeaderInSection:)] &&
+        [self.pageDelegate pageView:self viewForHeaderInSection:section]) {
+        return [self.pageDelegate pageView:self viewForHeaderInSection:section];
+    }
+    return [UIView new];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([self.pageDelegate respondsToSelector:@selector(pageView:heightForHeaderInSection:)]) {
+       return [self.pageDelegate pageView:self heightForHeaderInSection:section];
+    }
+    return 0;
+}
+
+#pragma mark -
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"%@",scrollView);
+    [self.pageDelegate containerScrollView].scrollEnabled = NO;
+}
 
 #pragma mark - setupSubView
 //- (void)setupAddSubView {

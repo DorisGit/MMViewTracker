@@ -12,7 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MMDoubanHomeViewController : MMBaseViewController
-
+/// table
+@property (nonatomic, strong) UITableView *table;
 @end
 
 NS_ASSUME_NONNULL_END

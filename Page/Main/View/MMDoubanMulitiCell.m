@@ -25,9 +25,8 @@
 }
 
 - (void)setup {
-//    self.collectionView
-//    self.contentView.alpha = 0.3;
-    self.contentView.layer.edgeAntialiasingMask = true;
+
+    
 }
 
 - (void)setSubjects:(NSArray *)subjects {

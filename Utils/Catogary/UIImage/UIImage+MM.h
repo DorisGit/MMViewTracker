@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
                           borderWidth:(CGFloat)borderWidth
                           borderColor:(UIColor *)borderColor
                        borderLineJoin:(CGLineJoin)borderLineJoin;
+
++ (UIImage *)mm_imageWithColor:(UIColor *)color;
++ (UIImage *)mm_imageWithColor:(UIColor *)color size:(CGSize)size;
 @end
 
 NS_ASSUME_NONNULL_END

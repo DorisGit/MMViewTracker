@@ -7,14 +7,11 @@
 //
 
 #import "MMDoubanHomeViewController.h"
-
 #import "MMDoubanMulitiCell.h"
 #import "MMDoubanSingleCell.h"
-
+#import "MMPageView.h"
 
 @interface MMDoubanHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-/// table
-@property (nonatomic, strong) UITableView *table;
 /// array
 @property (nonatomic, strong) NSArray *subjects;
 @end
@@ -36,6 +33,7 @@
     
     // Do any additional setup after loading the view.
     [self.view addSubview:self.table];
+    
     // subjects
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"top250.json" ofType:nil];
     NSData *topData = [[NSData alloc] initWithContentsOfFile:filePath];
@@ -45,7 +43,7 @@
     
     [self.table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(0);
-        make.top.mas_equalTo(UINavigationBar.barHeight);
+        make.top.mas_equalTo(0);//UINavigationBar.barHeight
     }];
 }
 

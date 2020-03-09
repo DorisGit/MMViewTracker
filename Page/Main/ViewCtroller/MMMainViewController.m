@@ -10,6 +10,7 @@
 #import "MMDoubanHomeViewController.h"
 #import "MMFlowViewController.h"
 #import "MMOffseScreenRenderViewController.h"
+#import "MMPageViewController.h"
 
 
 
@@ -75,6 +76,13 @@
     MMOffseScreenRenderViewController *doubanCtrl = [MMOffseScreenRenderViewController new];
     [self.navigationController pushViewController:doubanCtrl animated:YES];
 }
+
+- (void)clickCell_3 {
+    
+    MMPageViewController *doubanCtrl = [MMPageViewController new];
+    [self.navigationController pushViewController:doubanCtrl animated:YES];
+}
+// MMPageViewController
 
 - (UITableView *)table {
     

@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// MMPageViewProtocol
-@protocol MMPageViewProtocol <NSObject>
+@protocol MMPageViewDataSource <NSObject>
 
 /// 获取分组数量 默认为1
 /// @param pageView pageView
@@ -33,17 +33,39 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param indexPath indexPath
 - (UIViewController *)pageView:(MMPageView *)pageView cellForContainerAtIndexPath:(NSIndexPath *)indexPath;
 
+
+@end
+
+@protocol MMPageViewDelegate <NSObject>
+
 /// 获取当前展示的容器内容高度
 /// @param pageView pageView
 /// @param indexPath indexPath
 - (CGFloat)pageView:(MMPageView *)pageView heightForContainerAtIndexPath:(NSIndexPath *)indexPath;
 
+- (CGFloat)pageView:(MMPageView *)pageView heightForHeaderInSection:(NSInteger)section;
+
+/// 获取当前展示的分组内容
+/// @param pageView pageView
+/// @param section section
+- (UIView *)pageView:(MMPageView *)pageView viewForHeaderInSection:(NSInteger)section;
+
+- (UIScrollView *)containerScrollView;
 @end
+
+//typedef void(^MMPageViewDidScrollView)(UIScrollView *scrollView);
 
 @interface MMPageView : UITableView
 
-/// pageDelegate
-@property (nonatomic, copy) id<MMPageViewProtocol> delegate;
+/// container
+@property (nonatomic, strong) UIViewController *container;
+/// controllers
+@property (nonatomic, strong) NSArray<UIViewController *> *controllers;
+/// titles
+@property (nonatomic, strong) NSArray *titles;
+
+@property (nonatomic, weak) id<MMPageViewDataSource> pageDataSource;//dataSource
+@property (nonatomic, weak) id<MMPageViewDelegate> pageDelegate;
 
 - (instancetype)initWithContainerController:(UIViewController *)container
                                 controllers:(NSArray<UIViewController *> *)controllers
