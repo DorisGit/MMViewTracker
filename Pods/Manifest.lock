@@ -18,9 +18,13 @@ PODS:
   - DACircularProgress (2.3.1)
   - Masonry (1.0.2)
   - MJExtension (3.2.1)
+  - Ouroboros (0.4.2)
   - SDWebImage (5.5.0):
     - SDWebImage/Core (= 5.5.0)
   - SDWebImage/Core (5.5.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
@@ -28,7 +32,9 @@ DEPENDENCIES:
   - DACircularProgress (~> 2.3.1)
   - Masonry (~> 1.0.2)
   - MJExtension (~> 3.2.1)
+  - Ouroboros
   - SDWebImage (~> 5.5.0)
+  - YYKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -36,7 +42,9 @@ SPEC REPOS:
     - DACircularProgress
     - Masonry
     - MJExtension
+    - Ouroboros
     - SDWebImage
+    - YYKit
 
 EXTERNAL SOURCES:
   BeeHive:
@@ -48,8 +56,10 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  Ouroboros: b9eaf40ced640896ea601e308f261bcb3c585393
   SDWebImage: 86589f0d47a7de15827640c71813e23fd428965c
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: b9e5c564dca9f3b963a23646377d23f73752f039
+PODFILE CHECKSUM: 0f1bf8ca86c8e061a82616842e7fff3f6f657a62
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

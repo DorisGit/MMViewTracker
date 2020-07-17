@@ -11,6 +11,9 @@
 #import "MMDoubanSingleCell.h"
 #import "MMPageView.h"
 
+#import <objc/runtime.h>
+#import <objc/message.h>
+
 @interface MMDoubanHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 /// array
 @property (nonatomic, strong) NSArray *subjects;
@@ -78,13 +81,80 @@
     }
 }
 
-- (void)clickCell_0 {
+- (void)clickCell_1 {
     
+    NSLog(@"This object is %p.", self);
+    NSLog(@"Class is %@, and super is %@.", [self class], [self superclass]);
+    
+    MMDoubanHomeViewController *currentClass = [self class];
+    for (int i = 1; i < 5; i++)
+    {
+        NSLog(@"%@ the isa pointer %d times gives %p", currentClass,i, currentClass);
+        currentClass = object_getClass(currentClass);
+    }
+    
+    NSLog(@"NSObject's class is %p", [NSObject class]);
+    NSLog(@"NSObject's meta class is %p", object_getClass([NSObject class]));
+    
+}
+
+- (void)clickCell_2 {
+    
+    NSNumber *number1 = @1;
+    NSNumber *number2 = @2;
+    NSNumber *number3 = @3;
+    NSNumber *numberFFFF = @(0xFFFF);
+    
+    NSLog(@"number1 pointer is %p", number1);
+    NSLog(@"number2 pointer is %p", number2);
+    NSLog(@"number3 pointer is %p", number3);
+    NSLog(@"numberffff pointer is %p", numberFFFF);
+
+    NSNumber *bigNumber = @(0xEFFFFFFFFFFFFFFF);
+    NSLog(@"bigNumber pointer is %p", bigNumber);
+}
+
+- (void)clickCell_3 {
+    
+    NSLog(@"%@",[self class]);
+    NSLog(@"%@",[super class]);
+}
+
+- (void)clickCell_4 {
+    MMDoubanItemModel *doubanModel = [MMDoubanItemModel new];
+    
+    NSLog(@"%d",[doubanModel isKindOfClass:[MMDoubanModel class]]);
+    NSLog(@"%d",[doubanModel isMemberOfClass:[MMDoubanModel class]]);
+    NSLog(@"%d",[MMDoubanItemModel isKindOfClass:[MMDoubanModel class]]);
+    NSLog(@"%d",[MMDoubanItemModel isKindOfClass:[NSObject class]]);
+    NSLog(@"---------------------------");
+    MMDoubanModel *douban = [MMDoubanModel new];
+    NSLog(@"%d",[MMDoubanModel isMemberOfClass:objc_getMetaClass([NSStringFromClass([MMDoubanModel class]) UTF8String])]);
+    NSLog(@"%d",[MMDoubanItemModel isMemberOfClass:[MMDoubanModel class]]);
+    NSLog(@"%d",[MMDoubanItemModel isMemberOfClass:[NSObject class]]);
+    NSLog(@"%d",[doubanModel isMemberOfClass:[MMDoubanModel class]]);
+    NSLog(@"%d",[doubanModel isMemberOfClass:[MMDoubanItemModel class]]);
+}
+
+- (void)clickCell_5 {
+
+    MMDoubanModel *doubanModel = [MMDoubanModel new];
+    [doubanModel douban];
+}
+
+- (void)clickCell_6 {
+    NSLog(@"%@",self);
+    
+//    NSString *myName = @"MM";
+    id cls = [MMDoubanModel class];
+    void *obj = &cls;
+    [(__bridge id)obj douban];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSLog(@"");
 }
+
 
 - (UITableView *)table {
     
@@ -106,6 +176,10 @@
         [_table mm_registerClassForCell:[MMDoubanSingleCell class]];
     }
     return _table;
+}
+
+- (void)dealloc {
+    NSLog(@"");
 }
 
 @end

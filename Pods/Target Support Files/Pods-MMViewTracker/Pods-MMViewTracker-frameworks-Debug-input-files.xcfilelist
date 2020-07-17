@@ -4,4 +4,6 @@ ${BUILT_PRODUCTS_DIR}/BeeHive/BeeHive.framework
 ${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework
 ${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/Ouroboros/Ouroboros.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework

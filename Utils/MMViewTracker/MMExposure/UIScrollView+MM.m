@@ -14,7 +14,7 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-//        [UIScrollView swizzleInstanceMethod:@selector(setDelegate:) withSelector:@selector(swizzle_setDelegate:)];
+        [UIScrollView swizzleInstanceMethod:@selector(setDelegate:) withSelector:@selector(swizzle_setDelegate:)];
     });
 }
 

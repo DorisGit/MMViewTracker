@@ -15,6 +15,14 @@
     };
 }
 
+- (void)douban {
+    NSLog(@"my name's %@--%@", self.title,self);
+}
+
+//- (NSString *)title {
+//    NSLog(@"%@的name's 是豆瓣",self);
+//    return @"豆瓣";
+//}
 @end
 
 @implementation MMImagesModel
@@ -34,5 +42,9 @@
 @end
 
 @implementation MMDirectorsModel
+
+@end
+
+@implementation MMDoubanItemModel
 
 @end

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) MMImagesModel *images;
 @property (nonatomic, copy) NSString *subtype;
 @property (nonatomic, copy) NSString *alt;
+- (void)douban;
 @end
 
 @interface MMImagesModel : NSObject
@@ -67,6 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *alt;
 @property (nonatomic, strong) MMAvatarsModel *avatars;
 @property (nonatomic, copy) NSString *name;
+
+@end
+
+@interface MMDoubanItemModel : MMDoubanModel
 
 @end
 

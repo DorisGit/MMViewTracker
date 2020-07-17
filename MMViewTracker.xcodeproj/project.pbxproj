@@ -27,6 +27,10 @@
 		0429FC4523D18C19004F12F4 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC4323D18C19004F12F4 /* NSObject+Swizzle.m */; };
 		0429FC4823D18E0C004F12F4 /* UIViewController+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429FC4723D18E0C004F12F4 /* UIViewController+MM.m */; };
 		0429FC4A23D1BEB7004F12F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429FC4923D1BEB7004F12F4 /* QuartzCore.framework */; };
+		044D406A246E4BC00019E36C /* MMTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D4069246E4BC00019E36C /* MMTouchViewController.m */; };
+		044D406F246EB1640019E36C /* MMThreadLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D406E246EB1640019E36C /* MMThreadLiveViewController.m */; };
+		044D4072246EB4030019E36C /* MMRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D4071246EB4030019E36C /* MMRoute.m */; };
+		045CB5E22462B48F00B94928 /* MMMessageForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = 045CB5E12462B48F00B94928 /* MMMessageForwarding.m */; };
 		0469F991240FF11500272574 /* UIView+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469F990240FF11500272574 /* UIView+MM.m */; };
 		0469F995240FF1EC00272574 /* UIImage+MM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469F994240FF1EC00272574 /* UIImage+MM.m */; };
 		0469F998240FF2DB00272574 /* MMOffseScreenRenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469F997240FF2DB00272574 /* MMOffseScreenRenderViewController.m */; };
@@ -133,6 +137,14 @@
 		0429FC4623D18E0C004F12F4 /* UIViewController+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MM.h"; sourceTree = "<group>"; };
 		0429FC4723D18E0C004F12F4 /* UIViewController+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MM.m"; sourceTree = "<group>"; };
 		0429FC4923D1BEB7004F12F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		044D4068246E4BC00019E36C /* MMTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTouchViewController.h; sourceTree = "<group>"; };
+		044D4069246E4BC00019E36C /* MMTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTouchViewController.m; sourceTree = "<group>"; };
+		044D406D246EB1640019E36C /* MMThreadLiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMThreadLiveViewController.h; sourceTree = "<group>"; };
+		044D406E246EB1640019E36C /* MMThreadLiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMThreadLiveViewController.m; sourceTree = "<group>"; };
+		044D4070246EB4030019E36C /* MMRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMRoute.h; sourceTree = "<group>"; };
+		044D4071246EB4030019E36C /* MMRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMRoute.m; sourceTree = "<group>"; };
+		045CB5E02462B48F00B94928 /* MMMessageForwarding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMMessageForwarding.h; sourceTree = "<group>"; };
+		045CB5E12462B48F00B94928 /* MMMessageForwarding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMMessageForwarding.m; sourceTree = "<group>"; };
 		0469F98F240FF11500272574 /* UIView+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MM.h"; sourceTree = "<group>"; };
 		0469F990240FF11500272574 /* UIView+MM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MM.m"; sourceTree = "<group>"; };
 		0469F993240FF1EC00272574 /* UIImage+MM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+MM.h"; sourceTree = "<group>"; };
@@ -464,6 +476,8 @@
 			isa = PBXGroup;
 			children = (
 				046CD5DC2409537200194547 /* MMDouBanProtocol.h */,
+				044D4070246EB4030019E36C /* MMRoute.h */,
+				044D4071246EB4030019E36C /* MMRoute.m */,
 			);
 			path = MMRouter;
 			sourceTree = "<group>";
@@ -512,6 +526,10 @@
 				0424FF7123F2DB3800AA34B9 /* MMFlowViewController.m */,
 				0469F996240FF2DB00272574 /* MMOffseScreenRenderViewController.h */,
 				0469F997240FF2DB00272574 /* MMOffseScreenRenderViewController.m */,
+				044D4068246E4BC00019E36C /* MMTouchViewController.h */,
+				044D4069246E4BC00019E36C /* MMTouchViewController.m */,
+				044D406D246EB1640019E36C /* MMThreadLiveViewController.h */,
+				044D406E246EB1640019E36C /* MMThreadLiveViewController.m */,
 			);
 			path = ViewCtroller;
 			sourceTree = "<group>";
@@ -566,6 +584,8 @@
 			children = (
 				04DA2B7F23D449E100D340C5 /* MMDoubanModel.h */,
 				04DA2B8023D449E100D340C5 /* MMDoubanModel.m */,
+				045CB5E02462B48F00B94928 /* MMMessageForwarding.h */,
+				045CB5E12462B48F00B94928 /* MMMessageForwarding.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -887,6 +907,7 @@
 			files = (
 				0469F998240FF2DB00272574 /* MMOffseScreenRenderViewController.m in Sources */,
 				04DA2B8423D4602B00D340C5 /* MMDoubanMulitiCell.m in Sources */,
+				045CB5E22462B48F00B94928 /* MMMessageForwarding.m in Sources */,
 				04DA2B7723D42CA500D340C5 /* MMInterfaceNetwork.m in Sources */,
 				04DA2BA423D48BC300D340C5 /* SDImageWebPCoder.m in Sources */,
 				04DA2B8B23D4777600D340C5 /* UIFont+MM.m in Sources */,
@@ -905,12 +926,14 @@
 				0469F991240FF11500272574 /* UIView+MM.m in Sources */,
 				0421705923D1C80D00A69C73 /* UICollectionView+MM.m in Sources */,
 				0429FC4523D18C19004F12F4 /* NSObject+Swizzle.m in Sources */,
+				044D4072246EB4030019E36C /* MMRoute.m in Sources */,
 				0424FF7823F2DBE000AA34B9 /* GMViewFlowLayout.m in Sources */,
 				0469F995240FF1EC00272574 /* UIImage+MM.m in Sources */,
 				04DA2BA223D48BC300D340C5 /* GMWebViewUrlProtocol.m in Sources */,
 				04DA2BAC23D5BCA400D340C5 /* UINavigationBar+MM.m in Sources */,
 				046CD5D62406469C00194547 /* MMExposureItemModel.m in Sources */,
 				04DA2B8F23D4874400D340C5 /* MMDoubanSingleCell.m in Sources */,
+				044D406A246E4BC00019E36C /* MMTouchViewController.m in Sources */,
 				046CD5D3240564F700194547 /* NSDate+MM.m in Sources */,
 				0429FBEE23CF313E004F12F4 /* main.m in Sources */,
 				04DA2B8723D466B300D340C5 /* MMDoubanItemViewCell.m in Sources */,
@@ -923,6 +946,7 @@
 				0429FBE023CF313C004F12F4 /* SceneDelegate.m in Sources */,
 				0495EFD323D5D89000E5FFD3 /* MMPageViewController.m in Sources */,
 				04DA2B8123D449E100D340C5 /* MMDoubanModel.m in Sources */,
+				044D406F246EB1640019E36C /* MMThreadLiveViewController.m in Sources */,
 				0429FC3E23D16857004F12F4 /* MMExposureManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1076,6 +1100,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C4KDUT3X;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd/SDWebImageWebp",
@@ -1136,6 +1161,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C4KDUT3X;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd/SDWebImageWebp",

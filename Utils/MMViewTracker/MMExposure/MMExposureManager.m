@@ -102,7 +102,7 @@ NS_INLINE BOOL MMIsNeedIgnoreTrackExposure(BOOL ignoreTracking) {
         for (UIView *subview in view.subviews) {
             if (!subview.pageCtrl) {
                 subview.pageCtrl = [view currentControllerForView];
-#ifdef MMExposureDebugLog
+#if MMExposureDebugLog
                 NSLog(@"%@---所在的页面：%@",subview,subview.pageCtrl);
 #endif
             }

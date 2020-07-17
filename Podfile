@@ -20,6 +20,8 @@ target 'MMViewTracker' do
   # 组件化方案protocol-impClass
 #  pod 'BeeHive', '~> 1.6.0'
   pod 'BeeHive', :path => '/Users/mikasa/Documents/GitHub_Mikasa/BeeHive'
+  #
+  pod "Ouroboros"
   
   # YYKit
   pod 'YYKit'

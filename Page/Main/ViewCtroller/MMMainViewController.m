@@ -11,8 +11,9 @@
 #import "MMFlowViewController.h"
 #import "MMOffseScreenRenderViewController.h"
 #import "MMPageViewController.h"
-
-
+#import "MMMessageForwarding.h"
+#import "MMTouchViewController.h"
+#import "MMThreadLiveViewController.h"
 
 @interface MMMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -47,7 +48,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView mm_dequeueReusableCell:[UITableViewCell class] forIndexPath:indexPath];
     cell.backgroundColor = MMRandomColor;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Demo---%zd",indexPath.row];
+    cell.textLabel.textColor = MMColor282828;
+    cell.textLabel.text = [NSString stringWithFormat:@"Demo---%zd",indexPath.row];
     return cell;
 }
 
@@ -82,8 +84,23 @@
     MMPageViewController *doubanCtrl = [MMPageViewController new];
     [self.navigationController pushViewController:doubanCtrl animated:YES];
 }
-// MMPageViewController
 
+- (void)clickCell_4 {
+    MMMessageForwarding *message = [MMMessageForwarding new];
+    [message forwarding];
+}
+
+- (void)clickCell_5 {
+    
+    MMTouchViewController *doubanCtrl = [MMTouchViewController new];
+    [self.navigationController pushViewController:doubanCtrl animated:YES];
+    
+}
+- (void)clickCell_6 {
+    
+    MMThreadLiveViewController *doubanCtrl = [MMThreadLiveViewController new];
+    [self.navigationController pushViewController:doubanCtrl animated:YES];
+}
 - (UITableView *)table {
     
     if (!_table) {
@@ -104,14 +121,4 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"");
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -82,32 +82,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "07CB1EDD-2564-47F3-92B0-CA41CB6AD659"
+            uuid = "517B1AF2-A881-4618-A85E-A3A3EFA8C526"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Page/PageView/View/MMPageView.m"
+            filePath = "Page/Main/ViewCtroller/MMDoubanHomeViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-tableView:viewForHeaderInSection:"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-clickCell_5"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA8C6720-7A61-4B19-BBE9-6E45221CAFD4"
+            uuid = "0DB76C98-6CB1-4725-B4DF-AE3F3EC71CE8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Page/PageView/View/MMPageView.m"
+            filePath = "Page/Main/Model/MMDoubanModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-tableView:heightForHeaderInSection:"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-douban"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
